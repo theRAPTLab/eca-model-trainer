@@ -1,0 +1,4 @@
+# ignore all output
+/data
+/model
+/result
