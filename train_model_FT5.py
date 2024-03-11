@@ -251,23 +251,14 @@ if __name__ == '__main__':
     device = "cuda:0" if torch.cuda.is_available() else "cpu" 
     
     # ---------------------------------------------
-    # preprocessing: combining a new dataset with our data 
+    # preprocessing
     if True:
-        # 1) combine a new data with the existing data
-        df = pd.read_csv("data/ci_train.csv", header=0) # Crystal Island data
-        df  = df[~df.sentence.str.startswith("Topic:")]
-        df['sentence'] = "Type: CI, " + df.sentence
         
         iu = pd.read_csv("data/IU_ECA_Questions_and_Answers.csv", header=0) # IU data
         cols= ['topic', 'sentence', 'labels']
         iu.columns = cols
-        # iu_topic = iu.copy(deep=True)
         iu['sentence'] = "Type: " + iu.topic + ", response: " + iu.sentence        
-        # iu_topic['labels'] = iu_topic.topic
-        # iu_data = pd.concat([iu[cols], iu_topic[cols]], axis=0)
-        # alldata = pd.concat([df[cols], iu_data], axis=0)
-        alldata = pd.concat([df[cols], iu[cols]], axis=0)
-        # print("IU data: response ({}) + topic ({}) = total: {}".format(len(iu), len(iu_topic), len(iu_data)))
+        alldata = iu[cols]
         print(f"IU data: response ({len(iu)})")
         print(f"All data: {len(alldata)}")
         alldata.to_csv("data/eca_data.csv", index=False)
