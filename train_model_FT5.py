@@ -254,10 +254,11 @@ if __name__ == '__main__':
     # preprocessing
     if True:
         
-        iu = pd.read_csv("data/IU_ECA_Questions_and_Answers.csv", header=0) # IU data
-        cols= ['topic', 'sentence', 'labels']
+        # iu = pd.read_csv("data/IU_ECA_Questions_and_Answers.csv", header=0)
+        iu = pd.read_csv("data/Context_Field_Test.csv", header=0)
+        cols= ['topic', 'context', 'sentence', 'labels']
         iu.columns = cols
-        iu['sentence'] = "Type: " + iu.topic + ", response: " + iu.sentence        
+        iu['sentence'] = "Type: " + iu.topic + ", context: " + iu.context + ", response: " + iu.sentence        
         alldata = iu[cols]
         print(f"IU data: response ({len(iu)})")
         print(f"All data: {len(alldata)}")
