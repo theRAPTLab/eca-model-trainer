@@ -8,7 +8,7 @@
 
 * Execution: 
 
-    $ python train_model_FT5.py -model=uichat -batch=16 -lr=0.0003 -epoch=10
+    $ python train_model_FT5.py -model=uichat -batch=16 -lr="0.0003" -epoch=100
 
 
 The code includes:
@@ -40,7 +40,7 @@ The code includes:
          
 
 
-4. Development evnrionment
+4. Development environment
     * OS: CentOS Linux 7 (Core)
     * miniconda install: https://docs.conda.io/projects/conda/en/latest/user-guide/install/
     * packages (see the installation guide at the bottom):

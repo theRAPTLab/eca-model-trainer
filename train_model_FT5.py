@@ -254,8 +254,7 @@ if __name__ == '__main__':
     # preprocessing
     if True:
         
-        # iu = pd.read_csv("data/IU_ECA_Questions_and_Answers.csv", header=0)
-        iu = pd.read_csv("data/Context_Field_Test.csv", header=0)
+        iu = pd.read_csv("data/ECA Refinement Round 3 - GEMSTEP Observing with Context.csv", header=0)
         cols= ['topic', 'context', 'sentence', 'labels']
         iu.columns = cols
         iu['sentence'] = "Type: " + iu.topic + ", context: " + iu.context + ", response: " + iu.sentence        
