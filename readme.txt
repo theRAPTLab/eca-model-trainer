@@ -55,7 +55,7 @@ The code includes:
         scikit-learn=1.2
                 
 
-4. Installation guide with conda:
+5. Installation guide with conda:
     1) Linux
         $ conda create -n nlp python=3.10 numpy=1.25
         $ conda install pytorch=2.0.1 pytorch-cuda=11.8 -c pytorch -c nvidia
@@ -64,3 +64,13 @@ The code includes:
         $ conda install -c conda-forge sentence-transformers
         $ conda install -c anaconda scikit-learn
         $ pip install transformers datasets nvidia-ml-py3
+
+6. Git install
+    $ conda install git
+    $ mkdir eca # or whatever 
+    $ cd eca
+    $ git clone https://github.com/theRAPTLab/eca-model-trainer.git
+
+7. Execute (repeated from above)
+    $ python train_model_FT5.py -model=uichat -batch=16 -lr="0.0003" -epoch=100
+
