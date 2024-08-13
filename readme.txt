@@ -58,6 +58,7 @@ The code includes:
 5. Installation guide with conda:
     1) Linux
         $ conda create -n nlp python=3.10 numpy=1.25
+        $ conda activate nlp
         $ conda install pytorch=2.0.1 pytorch-cuda=11.8 -c pytorch -c nvidia
              # torch gpu check: $ python -c "import torch; print(torch.cuda.is_available())"
         $ conda install -c conda-forge accelerate              # >= 0.20.1 ( Using the `Trainer` with `PyTorch` requires `accelerate>=0.20.1`)
